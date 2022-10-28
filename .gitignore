@@ -30,3 +30,4 @@ _opam/
 _esy/
 esy.lock/
 node_modules/
+verified_web.esy.lock

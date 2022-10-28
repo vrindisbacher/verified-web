@@ -1,0 +1,4 @@
+(library
+ (public_name verified_web)
+ (name verified_web)
+ (libraries dream views router))

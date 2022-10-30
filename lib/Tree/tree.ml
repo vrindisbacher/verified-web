@@ -22,7 +22,8 @@ class kd_persist (d : int) = object(self)
                     Node (k', l_tree, (ins r_tree (axis + 1)))
         in if List.length k = dim then tree <- ins tree 0 
 
-    method sort_and_insert_top_n (k : float list) (ideal_node : float list) (f : float list -> float list -> float) (acc : float list list) (n : int) = 
+    method sort_and_insert_top_n (k : float list) (ideal_node : float list) (f : float list -> float list -> float) (acc : float list list) (n : int) =
+        (* helper method for knn - inserts an element into our length n result array if appropriate *) 
         let comp x y = 
             let x_score = f ideal_node x in
             let y_score = f ideal_node y in 
@@ -39,6 +40,7 @@ class kd_persist (d : int) = object(self)
                 acc 
 
     method kd_knn (ideal_node : float list) (f : float list -> float list -> float) (n : int) = 
+        (* knn for our kd_tree *)
         let rec aux t (axis : int) (acc : float list list) =  
             match t with 
             | Leaf -> acc 

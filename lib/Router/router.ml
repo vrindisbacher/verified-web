@@ -1,4 +1,4 @@
 let routes : Dream.route list  = 
     [
-        Dream.get "/" Views.get;
+        Dream.get "/" Views.simple_get;
     ]
